@@ -1,4 +1,5 @@
-# --------------------------------------------------------------- numbers
+"""Numeric helper functions for QE Foundations."""
+
 def is_positive_int(value):
     """True for ints greater than zero (bool is NOT accepted)."""
     return isinstance(value, int) and not isinstance(value, bool) and value > 0

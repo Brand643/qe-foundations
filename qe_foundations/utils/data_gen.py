@@ -1,4 +1,7 @@
-# -------------------------------------------------------------- test data
+"""Test-data generation helpers for QE Foundations."""
+
+import random
+
 FIRST_NAMES = ["Asha", "Ben", "Carla", "Dev", "Elena", "Farid"]
 ROLES = ["viewer", "editor", "admin"]
 

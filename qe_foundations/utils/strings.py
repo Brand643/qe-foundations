@@ -1,4 +1,5 @@
-# ---------------------------------------------------------------- strings
+"""String helper functions for QE Foundations."""
+
 def normalize_whitespace(text):
     """Trim the text and collapse runs of whitespace into one space."""
     return " ".join(text.split())
@@ -14,3 +15,12 @@ def slugify(text):
 def is_valid_email(email):
     """True when email has exactly one '@' and a '.' in the domain part."""
     return email.count("@") == 1 and "." in email.split("@")[1]
+
+
+def mask_email(email):
+    """Hide user part of email except the first character."""
+    if not is_valid_email(email):
+        return email
+
+    local, domain = email.split("@")
+    return f"{local[0]}***@{domain}"

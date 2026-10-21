@@ -1,4 +1,7 @@
-# ----------------------------------------------------------------- dates
+"""Date and time helper functions for QE Foundations."""
+
+from datetime import datetime, timedelta
+
 def add_days(day, days):
     """Return the date `days` after `day` (a datetime.date). Negative goes back."""
     return day + timedelta(days=days)
@@ -13,3 +16,8 @@ def timestamp_for_filename(moment=None):
     """'20250131_093000' - safe to use inside file and folder names."""
     moment = moment or datetime.now()
     return moment.strftime("%Y%m%d_%H%M%S")
+
+
+def days_between(start, end):
+    """Return the number of days between two dates."""
+    return (end - start).days
